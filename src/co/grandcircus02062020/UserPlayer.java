@@ -10,6 +10,7 @@ public class UserPlayer extends Player {
 
 	@Override
 	public Roshambo generateRoshambo(Scanner scnr) {
+		// The lab asked for us to put the scanner in the generateRoshambo method
 		int userChoice = Validator.getInt(scnr, "Please choose [1] Rock, [2] Paper, or [3] Scissors.\n", 1, 3);
 		switch (userChoice) {
 		case 1:

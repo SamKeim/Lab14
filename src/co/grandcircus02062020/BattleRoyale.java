@@ -15,6 +15,7 @@ public class BattleRoyale {
 		boolean exitCase = false;
 		boolean userWins = false;
 
+		// Welcome procedure
 		System.out.println("Welcome to Roshambo!");
 		System.out.println("Please enter your name:");
 		userName = scnr.next();
@@ -22,8 +23,9 @@ public class BattleRoyale {
 		Player user = new UserPlayer(userName);
 		System.out.println("Thank you for joining us " + user.getName() + ".");
 		
-		
+		// Playing the game
 		do {  
+			// Choose opponent
 			userChoice = Validator.getInt(scnr, "Please choose your oponent:\n1. Dwayne\n2. Al\n", 1, 2);
 			switch (userChoice) {
 			case 1:
@@ -36,10 +38,13 @@ public class BattleRoyale {
 				userOpponent = "Al";
 				opponentRoshambo = Al.generateRoshambo();
 			}
+			
+			// Play and output roshambo
 			Roshambo userRoshambo = user.generateRoshambo(scnr);
 			System.out.println("You have chosen: " + userRoshambo);
 			System.out.println(userOpponent + " has chosen: " + opponentRoshambo);
 
+			// Declare winner
 			userWins = playRoshambo(userRoshambo, opponentRoshambo);
 			if (userWins) {
 				System.out.println("You have won!");
@@ -47,6 +52,7 @@ public class BattleRoyale {
 				System.out.println(userOpponent + " has won.");
 			}
 			
+			// Ask to go again
 			System.out.println("Would you like to play again " + userName);
 			Validator valid = new Validator();
 			exitCase = !(valid.yesOrNo(scnr));
@@ -54,6 +60,8 @@ public class BattleRoyale {
 		System.out.println("Thank you, goodbye.");
 	}
 	
+	
+	// Decision for winner
 	public static boolean playRoshambo(Roshambo user, Roshambo opponent) {
 		boolean userWins = true;
 		if (user.equals(Roshambo.ROCK) && opponent.equals(Roshambo.SCISSORS)) {

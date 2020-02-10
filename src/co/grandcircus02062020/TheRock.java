@@ -3,7 +3,7 @@ package co.grandcircus02062020;
 import java.util.Scanner;
 
 public class TheRock extends Player {
-	
+	// Always picks ROCK
 	public TheRock () {
 		super("Dwayne");
 	}

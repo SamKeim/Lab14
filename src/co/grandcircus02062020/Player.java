@@ -3,7 +3,7 @@ package co.grandcircus02062020;
 import java.util.Scanner;
 
 public abstract class Player {
-	
+	// Abstract class Player
 	protected String name;
 	
 	public abstract Roshambo generateRoshambo();

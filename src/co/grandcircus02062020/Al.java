@@ -3,7 +3,7 @@ package co.grandcircus02062020;
 import java.util.Scanner;
 
 public class Al extends Player {
-
+	// Random player
 	public Al() {
 		super("Al");
 	}
